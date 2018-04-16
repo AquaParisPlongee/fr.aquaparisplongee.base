@@ -161,3 +161,19 @@ function base_civicrm_navigationMenu(&$menu) {
   ));
   _base_civix_navigationMenu($menu);
 } // */
+
+/**
+ * Error handling fucntion
+ *
+ * In case the user is not login and have not access to the page redirect to the
+ * login page of WordPress
+ * 
+ */
+function AquaParisPlongeeErrorHandler($params) {
+    // $myfile = file_put_contents('/var/www/html/logs.txt', print_r($params, true).PHP_EOL , FILE_APPEND | LOCK_EX);
+    if (!is_user_logged_in() && $params['message'] == "Vous n'avez pas l'autorisation d'accéder à cette page.") {
+        $redirect_url = wp_login_url( $_SERVER["REQUEST_URI"] );
+        CRM_Utils_System::redirect($redirect_url);
+    }
+    return FALSE;
+}
