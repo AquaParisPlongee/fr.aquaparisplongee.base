@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="fr.aquaparisplongee.base" type="module">
   <file>base</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
+  <name>Specific to Aqua Paris Plongée</name>
+  <description>Some features specific to Aqua Paris Plongée website</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Thomas Blein</author>
@@ -15,7 +15,7 @@
     <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
   <releaseDate>2018-04-15</releaseDate>
-  <version>1.0</version>
+  <version>0.1.0</version>
   <develStage>alpha</develStage>
   <compatibility>
     <ver>4.7</ver>
