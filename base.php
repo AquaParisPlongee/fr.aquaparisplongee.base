@@ -171,7 +171,7 @@ function base_civicrm_navigationMenu(&$menu) {
  */
 function AquaParisPlongeeErrorHandler($params) {
     // $myfile = file_put_contents('/var/www/html/logs.txt', print_r($params, true).PHP_EOL , FILE_APPEND | LOCK_EX);
-    if (!is_user_logged_in() && $params['message'] == "Vous n'avez pas l'autorisation d'accéder à cette page.") {
+    if (!is_user_logged_in()) {
         $redirect_url = wp_login_url( $_SERVER["REQUEST_URI"] );
         CRM_Utils_System::redirect($redirect_url);
     }
