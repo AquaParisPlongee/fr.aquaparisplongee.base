@@ -387,7 +387,8 @@ class CRM_Contact_Form_Task_PDFLetterCommon {
             'IN' => $form->_contactIds
         ),
         'options' => array(
-            'sort' => "sort_name"
+            'sort' => "sort_name",
+            'limit' => 200,
         ),
     ));
 
