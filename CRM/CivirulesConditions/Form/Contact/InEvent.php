@@ -18,6 +18,7 @@ class CRM_CivirulesConditions_Form_Contact_InEvent extends CRM_CivirulesConditio
         $result = civicrm_api3('Event', 'get', array(
             'return' => array("id", "title"),
             'is_active' => 1,
+            'options' => array('limit' => 0),
         ));
         $values = array();
         foreach ($result['values'] as $event){
