@@ -27,15 +27,14 @@ function _civicrm_api3_contact_setcaciexpiration_spec(&$spec) {
  * @throws API_Exception
  */
 function civicrm_api3_contact_setcaciexpiration($params) {
-    $caci_date_field = "custom_12";
-    $caci_exp_date_field = "custom_34";
+    require __DIR__ . '/caci_fields.php';
     if (!preg_match('/[0-9]+/i', $params['contact_id'])) {
         throw new API_Exception('Parameter contact_id must be a unique id');
     }
     $contact_id = $params['contact_id'];
     $date_certificat = civicrm_api3(
         'Contact', 'getvalue', [
-            'return' =>$caci_date_field,
+            'return' => $caci_date_field,
             'id' => $contact_id,
         ]);
     $date_certificat = strtotime($date_certificat);
