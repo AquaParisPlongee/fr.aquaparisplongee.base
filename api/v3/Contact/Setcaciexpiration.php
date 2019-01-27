@@ -18,7 +18,7 @@ function _civicrm_api3_contact_setcaciexpiration_spec(&$spec) {
 }
 
 /**
- * Group.Setcaciexpiration API
+ * Contact.Setcaciexpiration API
  *
  * @param array $params
  * @return array API result descriptor
@@ -52,9 +52,11 @@ function civicrm_api3_contact_setcaciexpiration($params) {
         )
     );
 
-    $returnValues[$group_id] = array(
+    $returnValues[$contact_id] = array(
         'status_msg' => "Succesfully set CACI expiration date of $contact_id to '$date_expiration'",
     );
+
+    // $myfile = file_put_contents(__DIR__ . '/logs.txt', $returnValues[$contact_id].PHP_EOL , FILE_APPEND | LOCK_EX);
 
     return civicrm_api3_create_success($returnValues, $params, 'Contact', 'Setcaciexpiration');
 }
