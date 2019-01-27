@@ -15,6 +15,11 @@ class CRM_Base_Upgrader extends CRM_Base_Upgrader_Base {
   public function install() {
     $this->executeSqlFile('sql/myinstall.sql');
   }
+   */
+    
+  public function install() {
+    $this->executeSqlFile('sql/createCaciExpiration.sql');
+  }
 
   /**
    * Example: Work with entities usually not available during the install step.
