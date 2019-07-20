@@ -40,7 +40,10 @@ function civicrm_api3_contact_setcaciexpiration($params) {
     $date_certificat = strtotime($date_certificat);
     $date_expiration = date("Y-m-d H:i:s", strtotime('+1 year', $date_certificat));
 
-    // $myfile = file_put_contents(__DIR__ . '/logs.txt', $date_expiration.PHP_EOL , FILE_APPEND | LOCK_EX);
+    // $myfile = file_put_contents(__DIR__ . '/logs.txt', date("Y-m-d H:i:s").PHP_EOL , FILE_APPEND | LOCK_EX);
+    // $myfile = file_put_contents(__DIR__ . '/logs.txt', "Starting CACI update for contact_id $contact_id".PHP_EOL , FILE_APPEND | LOCK_EX);
+    // $myfile = file_put_contents(__DIR__ . '/logs.txt', $caci_date_field.PHP_EOL , FILE_APPEND | LOCK_EX);
+    // $myfile = file_put_contents(__DIR__ . '/logs.txt', $caci_exp_date_field.PHP_EOL , FILE_APPEND | LOCK_EX);
 
     $result = civicrm_api3(
         'Contact',
@@ -55,7 +58,7 @@ function civicrm_api3_contact_setcaciexpiration($params) {
         'status_msg' => "Succesfully set CACI expiration date of $contact_id to '$date_expiration'",
     );
 
-    // $myfile = file_put_contents(__DIR__ . '/logs.txt', $returnValues[$contact_id].PHP_EOL , FILE_APPEND | LOCK_EX);
+    // $myfile = file_put_contents(__DIR__ . '/logs.txt', "Succesfully set CACI expiration date of $contact_id to '$date_expiration'".PHP_EOL , FILE_APPEND | LOCK_EX);
 
     return civicrm_api3_create_success($returnValues, $params, 'Contact', 'Setcaciexpiration');
 }
