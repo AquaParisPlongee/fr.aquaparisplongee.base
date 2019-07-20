@@ -19,6 +19,10 @@ class CRM_Base_Upgrader extends CRM_Base_Upgrader_Base {
     
   public function install() {
     $this->executeSqlFile('sql/createCaciExpiration.sql');
+    $this->executeSqlFile('sql/createMakePrimaryEmailPublic.sql');
+    $this->executeSqlFile('sql/createClearPublicEmail.sql');
+    $this->executeSqlFile('sql/createMakePrimaryPhonePublic.sql');
+    $this->executeSqlFile('sql/createClearPublicPhone.sql');
   }
 
   /**
