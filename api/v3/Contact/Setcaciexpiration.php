@@ -38,7 +38,7 @@ function civicrm_api3_contact_setcaciexpiration($params) {
             'id' => $contact_id,
         ]);
     $date_certificat = strtotime($date_certificat);
-    $date_expiration = date("Y-m-d H:i:s", strtotime('+1 year', $date_certificat));
+    $date_expiration = date("Y-m-d H:i:s", strtotime('+1 year -1 day', $date_certificat));
 
     // $myfile = file_put_contents(__DIR__ . '/logs.txt', date("Y-m-d H:i:s").PHP_EOL , FILE_APPEND | LOCK_EX);
     // $myfile = file_put_contents(__DIR__ . '/logs.txt', "Starting CACI update for contact_id $contact_id".PHP_EOL , FILE_APPEND | LOCK_EX);
